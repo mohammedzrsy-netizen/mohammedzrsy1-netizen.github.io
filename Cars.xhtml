@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ar" lang="ar" dir="rtl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="جدول سيارات مكتب الطلاب لتأجير السيارات ونموذج طلب الحجز" />
+<meta name="keywords" content="تأجير سيارات, أسعار السيارات, حجز سيارة, سوريا" />
+<meta name="author" content="مكتب الطلاب لتأجير السيارات" />
+<title>مكتب الطلاب لتأجير السيارات - السيارات والحجز</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="lib/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="myFunctions.js"></script>
+</head>
+<body>
+
+<div class="site-header">
+<div class="wrapper">
+<div class="brand">
+<img src="logo.svg" alt="شعار مكتب الطلاب لتأجير السيارات" width="56" height="56" />
+<h1>مكتب الطلاب لتأجير السيارات
+<span class="brand-sub">سيارات حديثة بأسعار مناسبة وخدمة على مدار الأسبوع</span>
+</h1>
+</div>
+<div class="header-contact">
+<p>هاتف المكتب: 0112345678</p>
+<p>موبايل: 0933223344</p>
+<p>البريد: info@alwiam-car-rental.sy</p>
+</div>
+</div>
+</div>
+
+<div class="main-nav">
+<div class="wrapper">
+<ul>
+<li><a href="Home.xhtml">الرئيسية</a></li>
+<li><a href="AboutUs.xhtml">من نحن</a></li>
+<li><a href="Cars.xhtml">السيارات والحجز</a></li>
+</ul>
+</div>
+</div>
+
+<div class="wrapper">
+
+<div class="content">
+<h2 class="page-title">السيارات المتوفرة للتأجير</h2>
+<p>يوضّح الجدول التالي السيارات المتوفرة في المكتب وأسعار التأجير اليومية. للإطلاع على مواصفات سيارة معيّنة اضغط المربع في عمود «إظهار التفاصيل»، ويمكن إظهار تفاصيل أكثر من سيارة في الوقت نفسه. وبعد تحديد السيارة أو السيارات المطلوبة من عمود «اختيار» اضغط زر «متابعة» لتعبئة نموذج الحجز.</p>
+
+<div class="toolbar">
+<div class="tool-cell align-left">
+<span class="field-label">بحث بالرمز أو الموديل</span>
+<input type="text" id="carFilter" name="carFilter" value="" />
+<span class="hint" id="filterResult">عدد السيارات الظاهرة: 5</span>
+</div>
+<div class="tool-cell">
+<input type="button" class="btn" id="showAllDetailsButton" value="إظهار تفاصيل كل السيارات" />
+<input type="button" class="btn" id="clearSelectionButton" value="إلغاء كل الاختيارات" />
+</div>
+</div>
+
+<table id="carsTable" cellspacing="0" cellpadding="4">
+<caption>جدول السيارات وأسعار التأجير اليومية</caption>
+<tr>
+<th>الرمز</th>
+<th>الموديل</th>
+<th>سنة الصنع</th>
+<th>السعر اليومي</th>
+<th>إظهار التفاصيل</th>
+<th>اختيار</th>
+</tr>
+
+<tr class="car-row" id="row-0">
+<td class="code-cell" id="code-0">CR-001</td>
+<td class="model-cell" id="model-0">Toyota Corolla</td>
+<td>2023</td>
+<td><span class="price-value" id="price-0">250000</span> ل.س</td>
+<td><input type="checkbox" class="check details-toggle" id="dt-0" name="dt-0" value="0" /></td>
+<td><input type="checkbox" class="check select-car" id="sel-0" name="selectedCars" value="CR-001" /></td>
+</tr>
+<tr class="details-row" id="details-0">
+<td colspan="6">
+<table class="details-grid">
+<tr>
+<td class="field-name">نوع الوقود</td>
+<td>بنزين - أوكتان 95</td>
+<td class="field-name">ناقل الحركة</td>
+<td>أوتوماتيك</td>
+</tr>
+<tr>
+<td class="field-name">عدد المقاعد</td>
+<td>5 مقاعد</td>
+<td class="field-name">عداد الكيلومترات</td>
+<td>35,000 كم</td>
+</tr>
+<tr>
+<td class="field-name">اللون</td>
+<td>أبيض</td>
+<td class="field-name">التكييف</td>
+<td>متوفر - أمامي</td>
+</tr>
+<tr>
+<td class="field-name">وسائد هوائية</td>
+<td>6 وسائد</td>
+<td class="field-name">نظام الملاحة</td>
+<td>غير متوفر</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr class="car-row" id="row-1">
+<td class="code-cell" id="code-1">CR-002</td>
+<td class="model-cell" id="model-1">Kia Sportage</td>
+<td>2022</td>
+<td><span class="price-value" id="price-1">400000</span> ل.س</td>
+<td><input type="checkbox" class="check details-toggle" id="dt-1" name="dt-1" value="1" /></td>
+<td><input type="checkbox" class="check select-car" id="sel-1" name="selectedCars" value="CR-002" /></td>
+</tr>
+<tr class="details-row" id="details-1">
+<td colspan="6">
+<table class="details-grid">
+<tr>
+<td class="field-name">نوع الوقود</td>
+<td>بنزين - أوكتان 95</td>
+<td class="field-name">ناقل الحركة</td>
+<td>أوتوماتيك</td>
+</tr>
+<tr>
+<td class="field-name">عدد المقاعد</td>
+<td>5 مقاعد</td>
+<td class="field-name">عداد الكيلومترات</td>
+<td>52,000 كم</td>
+</tr>
+<tr>
+<td class="field-name">اللون</td>
+<td>رمادي</td>
+<td class="field-name">التكييف</td>
+<td>متوفر - أمامي وخلفي</td>
+</tr>
+<tr>
+<td class="field-name">وسائد هوائية</td>
+<td>6 وسائد</td>
+<td class="field-name">نظام الملاحة</td>
+<td>متوفر</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr class="car-row" id="row-2">
+<td class="code-cell" id="code-2">CR-003</td>
+<td class="model-cell" id="model-2">Hyundai Elantra</td>
+<td>2024</td>
+<td><span class="price-value" id="price-2">300000</span> ل.س</td>
+<td><input type="checkbox" class="check details-toggle" id="dt-2" name="dt-2" value="2" /></td>
+<td><input type="checkbox" class="check select-car" id="sel-2" name="selectedCars" value="CR-003" /></td>
+</tr>
+<tr class="details-row" id="details-2">
+<td colspan="6">
+<table class="details-grid">
+<tr>
+<td class="field-name">نوع الوقود</td>
+<td>بنزين - أوكتان 95</td>
+<td class="field-name">ناقل الحركة</td>
+<td>أوتوماتيك</td>
+</tr>
+<tr>
+<td class="field-name">عدد المقاعد</td>
+<td>5 مقاعد</td>
+<td class="field-name">عداد الكيلومترات</td>
+<td>18,000 كم</td>
+</tr>
+<tr>
+<td class="field-name">اللون</td>
+<td>أزرق</td>
+<td class="field-name">التكييف</td>
+<td>متوفر - أمامي</td>
+</tr>
+<tr>
+<td class="field-name">وسائد هوائية</td>
+<td>8 وسائد</td>
+<td class="field-name">نظام الملاحة</td>
+<td>متوفر</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr class="car-row" id="row-3">
+<td class="code-cell" id="code-3">CR-004</td>
+<td class="model-cell" id="model-3">Chevrolet Spark</td>
+<td>2021</td>
+<td><span class="price-value" id="price-3">180000</span> ل.س</td>
+<td><input type="checkbox" class="check details-toggle" id="dt-3" name="dt-3" value="3" /></td>
+<td><input type="checkbox" class="check select-car" id="sel-3" name="selectedCars" value="CR-004" /></td>
+</tr>
+<tr class="details-row" id="details-3">
+<td colspan="6">
+<table class="details-grid">
+<tr>
+<td class="field-name">نوع الوقود</td>
+<td>بنزين - أوكتان 90</td>
+<td class="field-name">ناقل الحركة</td>
+<td>عادي - 5 سرعات</td>
+</tr>
+<tr>
+<td class="field-name">عدد المقاعد</td>
+<td>5 مقاعد</td>
+<td class="field-name">عداد الكيلومترات</td>
+<td>78,000 كم</td>
+</tr>
+<tr>
+<td class="field-name">اللون</td>
+<td>أحمر</td>
+<td class="field-name">التكييف</td>
+<td>متوفر - أمامي</td>
+</tr>
+<tr>
+<td class="field-name">وسائد هوائية</td>
+<td>4 وسائد</td>
+<td class="field-name">نظام الملاحة</td>
+<td>غير متوفر</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr class="car-row" id="row-4">
+<td class="code-cell" id="code-4">CR-005</td>
+<td class="model-cell" id="model-4">Renault Logan</td>
+<td>2022</td>
+<td><span class="price-value" id="price-4">150000</span> ل.س</td>
+<td><input type="checkbox" class="check details-toggle" id="dt-4" name="dt-4" value="4" /></td>
+<td><input type="checkbox" class="check select-car" id="sel-4" name="selectedCars" value="CR-005" /></td>
+</tr>
+<tr class="details-row" id="details-4">
+<td colspan="6">
+<table class="details-grid">
+<tr>
+<td class="field-name">نوع الوقود</td>
+<td>بنزين - أوكتان 90</td>
+<td class="field-name">ناقل الحركة</td>
+<td>عادي - 5 سرعات</td>
+</tr>
+<tr>
+<td class="field-name">عدد المقاعد</td>
+<td>5 مقاعد</td>
+<td class="field-name">عداد الكيلومترات</td>
+<td>61,000 كم</td>
+</tr>
+<tr>
+<td class="field-name">اللون</td>
+<td>فضي</td>
+<td class="field-name">التكييف</td>
+<td>متوفر - أمامي</td>
+</tr>
+<tr>
+<td class="field-name">وسائد هوائية</td>
+<td>4 وسائد</td>
+<td class="field-name">نظام الملاحة</td>
+<td>غير متوفر</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td colspan="3">الأسعار بالليرة السورية لليوم الواحد</td>
+<td colspan="3">الخصم 10% لمدة تأجير تتجاوز 7 أيام</td>
+</tr>
+</table>
+
+<div class="toolbar">
+<div class="tool-cell">
+<span class="summary-line" id="selectionText">لم يتم اختيار أي سيارة بعد.</span>
+</div>
+<div class="tool-cell align-left">
+<input type="button" class="btn" id="continueButton" value="متابعة" />
+</div>
+</div>
+<div class="notice notice-warn" id="selectionAlert">يرجى تحديد سيارة واحدة على الأقل من عمود «اختيار» قبل الضغط على زر متابعة.</div>
+</div>
+
+<div class="content" id="bookingBox">
+<h2 class="page-title">نموذج طلب الحجز</h2>
+<p>الحقول المعلّمة بالعلامة <span class="required-mark">*</span> إلزامية. باقي الحقول يمكن تركها فارغة.</p>
+<span class="field-message" id="generalMessage"></span>
+
+<form id="rentalForm" action="#" method="post">
+<fieldset>
+<legend>بيانات مقدّم الطلب</legend>
+<table class="plain-table">
+<tr>
+<td><label for="fullName" class="field-label">الاسم الكامل <span class="required-mark">*</span></label></td>
+<td>
+<input type="text" id="fullName" name="fullName" maxlength="40" value="" />
+<span class="hint">بالأحرف العربية فقط، مثال: محمد أحمد العلي</span>
+<span class="field-message" id="msgFullName"></span>
+</td>
+</tr>
+<tr>
+<td><label for="nationalId" class="field-label">الرقم الوطني <span class="required-mark">*</span></label></td>
+<td>
+<input type="text" id="nationalId" name="nationalId" maxlength="11" value="" />
+<span class="hint">11 خانة رقمية، أول خانتين من 01 إلى 14 بحسب المحافظة</span>
+<span class="hint" id="idParity"></span>
+<span class="field-message" id="msgNationalId"></span>
+</td>
+</tr>
+<tr>
+<td><label for="mobile" class="field-label">رقم الموبايل</label></td>
+<td>
+<input type="text" id="mobile" name="mobile" maxlength="17" value="" />
+<span class="hint">10 أرقام تبدأ بـ 09 (سيريتل أو MTN)، ويمكن كتابته بالصيغة 00963 أو 963+</span>
+<span class="field-message" id="msgMobile"></span>
+</td>
+</tr>
+<tr>
+<td><label for="email" class="field-label">البريد الإلكتروني</label></td>
+<td>
+<input type="email" id="email" name="email" maxlength="50" value="" />
+<span class="hint">مثال: client@example.com</span>
+<span class="field-message" id="msgEmail"></span>
+</td>
+</tr>
+<tr>
+<td><label for="licence" class="field-label">نوع رخصة القيادة</label></td>
+<td>
+<select id="licence" name="licence">
+<option value="private" selected="selected">رخصة خاصة</option>
+<option value="public">رخصة عامة</option>
+<option value="international">رخصة دولية</option>
+</select>
+</td>
+</tr>
+</table>
+</fieldset>
+
+<fieldset>
+<legend>بيانات التأجير</legend>
+<table class="plain-table">
+<tr>
+<td><label for="startDate" class="field-label">تاريخ بداية التأجير <span class="required-mark">*</span></label></td>
+<td>
+<input type="date" id="startDate" name="startDate" value="" />
+<span class="hint">بصيغة yyyy-mm-dd مثل 2026-11-05</span>
+<span class="field-message" id="msgStartDate"></span>
+</td>
+</tr>
+<tr>
+<td><label for="endDate" class="field-label">تاريخ نهاية التأجير <span class="required-mark">*</span></label></td>
+<td>
+<input type="date" id="endDate" name="endDate" value="" />
+<span class="hint">بصيغة yyyy-mm-dd، ويجب أن يكون لاحقاً لتاريخ البداية</span>
+<span class="field-message" id="msgEndDate"></span>
+</td>
+</tr>
+<tr>
+<td><label for="branch" class="field-label">فرع الاستلام <span class="required-mark">*</span></label></td>
+<td>
+<select id="branch" name="branch">
+<option value="">-- اختر الفرع --</option>
+<option value="damascus">فرع دمشق</option>
+<option value="aleppo">فرع حلب</option>
+<option value="homs">فرع حمص</option>
+<option value="latakia">فرع اللاذقية</option>
+</select>
+<span class="field-message" id="msgBranch"></span>
+</td>
+</tr>
+<tr>
+<td><label for="address" class="field-label">عنوان السكن</label></td>
+<td>
+<input type="text" id="address" name="address" maxlength="60" value="" />
+<span class="hint">إلزامي عند الاستلام من فرع دمشق</span>
+<span class="field-message" id="msgAddress"></span>
+</td>
+</tr>
+<tr>
+<td class="field-label">خدمات إضافية</td>
+<td>
+<input type="checkbox" class="check" id="withDriver" name="withDriver" value="yes" />
+التأجير مع سائق
+<input type="checkbox" class="check" id="deliverHome" name="deliverHome" value="yes" />
+تسليم السيارة إلى عنوان العميل
+</td>
+</tr>
+<tr>
+<td class="field-label">نوع الدفع</td>
+<td>
+<input type="radio" class="check" id="payCash" name="payType" value="cash" checked="checked" />
+نقداً
+<input type="radio" class="check" id="payBank" name="payType" value="bank" />
+حوالة مصرفية
+</td>
+</tr>
+</table>
+</fieldset>
+
+<fieldset>
+<legend>ملاحظات إضافية</legend>
+<label for="notes" class="field-label">ملاحظات على الطلب</label>
+<textarea id="notes" name="notes" cols="60" rows="4"></textarea>
+</fieldset>
+
+<div class="form-buttons">
+<input type="submit" class="btn btn-green" id="submitButton" value="إرسال" />
+<input type="reset" class="btn btn-reset" id="resetFormButton" value="مسح الحقول" />
+<input type="button" class="btn btn-reset" id="hideBookingButton" value="إغلاق النموذج" />
+</div>
+</form>
+</div>
+
+<div class="result-box" id="resultBox">
+<h3>تم إرسال طلب الحجز بنجاح</h3>
+<p>مقدّم الطلب: <span id="resultClient"></span></p>
+<p>مدة التأجير: <span id="resultPeriod"></span> — عدد الأيام: <span id="resultDays"></span></p>
+<div id="resultCars"></div>
+<table class="plain-table">
+<tr>
+<td>المجموع قبل الخصم</td>
+<td id="resultTotal"></td>
+</tr>
+<tr id="discountRow">
+<td>قيمة الخصم 10%</td>
+<td id="resultDiscount"></td>
+</tr>
+<tr>
+<td>المبلغ الإجمالي بعد الخصم</td>
+<td id="resultFinal"></td>
+</tr>
+</table>
+<p id="discountNotice"></p>
+<p><a href="Home.xhtml">الانتقال إلى الصفحة الرئيسية</a> | <a href="AboutUs.xhtml">معلومات الفروع وأرقام الدوام</a></p>
+</div>
+
+</div>
+
+<div class="site-footer">
+<div class="wrapper">
+<p>مكتب الطلاب لتأجير السيارات - دمشق، سوريا</p>
+<p>جميع الحقوق محفوظة <span id="currentYear">2026</span></p>
+<p><a href="Home.xhtml">الرئيسية</a> | <a href="AboutUs.xhtml">من نحن</a> | <a href="Cars.xhtml">السيارات والحجز</a></p>
+</div>
+</div>
+
+</body>
+</html>
